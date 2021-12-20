@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+    <link rel="stylesheet" href="css/inicio.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/funcionesInicioUsuarios.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Inicio</title>
+</head>
+
+<body>
+    <div id="inicio">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #EFBF1F;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="/img/logoAlto.png" alt="" width="55" height="30" class="d-inline-block align-text-top">
+                    De Alto Turmequé LTDA
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="portalAdmin.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="principal.html">Exit</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container-fluid col-md-8">
+            <div id="contenidoUser" class="table-responsive col-sm-6"></div>
+            <h3>Lista de Usuarios</h3>
+            <div>
+                <button type="button" class="btn btn-primary" onclick="traerInfoUser();">
+                    Traer Usuarios
+                </button>
+            </div>
+            <table id="tablaUsuario" class="table table-light table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">IDENTIFICATION</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">ADDRESS</th>
+                        <th scope="col">CELLPHONE</th>
+                        <th scope="col">EMAIL</th>
+                        <th scope="col">PASSWORD</th>
+                        <th scope="col">ZONE</th>
+                        <th scope="col">TYPE</th>
+                        <th scope="col" colspan="2">ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoUsuarios">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <div class="container">
+        <!-- <a href="#ventana1" class="btn btn-primary" data-toggle="modal">Editar</a> -->
+        <div class="modal face" id="ventana1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Header de la ventana -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Editar Usuario</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <!-- Contenido de la ventana -->
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="userIdEditar" class="col-form-label">Id:</label>
+                            <input type="number" class="form-control" id="userIdEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userIdentificationEditar" class="col-form-label">Identificación:</label>
+                            <input type="text" class="form-control" id="userIdentificationEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userNameEditar" class="col-form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="userNameEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userAddressEditar" class="col-form-label">Dirección:</label>
+                            <input type="text" class="form-control" id="userAddressEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userCellphoneEditar" class="col-form-label">Teléfono:</label>
+                            <input type="text" class="form-control" id="userCellphoneEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userEmailEditar" class="col-form-label">Email:</label>
+                            <input type="text" class="form-control" id="userEmailEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userPasswordEditar" class="col-form-label">Password:</label>
+                            <input type="text" class="form-control" id="userPasswordEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userZoneEditar" class="col-form-label">Zone:</label>
+                            <input type="text" class="form-control" id="userZoneEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userTypeEditar" class="col-form-label">Tipo Usuario:</label><br>
+                                <select name="userTypeEditar" id="userTypeEditar"class="form-control" required>
+                                    <option selected value="">Selecciona tipo de usuario:</option> 
+                                    <option value="COORD">Coordinador de zona</option>
+                                    <option value="ASE">Asesor Comercial</option>                                                             
+                                  </select > 
+                        </div>
+                    </div>
+                    <!-- Footer de la ventana -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button onclick="editarInfoUser()" type="button" class="btn btn-success">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

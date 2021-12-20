@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+    <link rel="stylesheet" href="css/inicio.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="js/funcionesInicioProductos.js"></script> -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Inicio</title>
+</head>
+
+<body>
+    <div id="inicio">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #EFBF1F;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="/img/logoAlto.png" alt="" width="55" height="30" class="d-inline-block align-text-top">
+                    De Alto Turmequé LTDA
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="portalAdmin.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="principal.html">Exit</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container-fluid col-md-8">
+            <div id="contenidoUser" class="table-responsive col-sm-6"></div>
+            <h3>Lista de Productos</h3>
+            <div>
+                <button type="button" class="btn btn-primary" onclick="traerInfoClothe();">
+                    Traer Productos
+                </button>
+            </div>
+            <table id="tablaProductos" class="table table-light table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">REFERENCE</th>
+                        <th scope="col">CATEGORY</th>
+                        <th scope="col">SIZE</th>
+                        <th scope="col">DESCRIPTION</th>
+                        <th scope="col">AVAILABILITY</th>
+                        <th scope="col">PRICE</th>
+                        <th scope="col">QUANTITY</th>
+                        <th scope="col">PHOTOGRAPHY</th>
+                        <th scope="col" colspan="2">ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoProductos">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <div class="container">
+        <!-- <a href="#ventana1" class="btn btn-primary" data-toggle="modal">Editar</a> -->
+        <div class="modal face" id="ventana1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Header de la ventana -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Editar Producto</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <!-- Contenido de la ventana -->
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="clotheReferenceEditar" class="col-form-label">Referencia:</label>
+                            <input type="text" class="form-control" id="clotheReferenceEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="clotheCategoryEditar" class="col-form-label">Categoría:</label>
+                            <input type="text" class="form-control" id="clotheCategoryEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="clotheSizeEditar" class="col-form-label">Tamaño:</label>
+                            <input type="text" class="form-control" id="clotheSizeEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="clotheDescriptionEditar" class="col-form-label">Descripción:</label>
+                            <input type="text" class="form-control" id="clotheDescriptionEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="clotheAvailaEditar" class="col-form-label">Disponibilidad:</label><br>
+                            <select name="clotheAvailaEditar" id="clotheAvailaEditar" class="form-control" required>
+                                <option selected value="">Selecciona la disponibilidad:</option>
+                                <option value="true">SI</option>
+                                <option value="false">NO</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="clothePriceEditar" class="col-form-label">Precio:</label>
+                            <input type="number" class="form-control" id="clothePriceEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="clotheQuantityEditar" class="col-form-label">Cantidad:</label>
+                            <input type="number" class="form-control" id="clotheQuantityEditar">
+                        </div>
+                        <div class="mb-3">
+                            <label for="clothePhotoEditar" class="col-form-label">Imagen:</label>
+                            <input type="text" class="form-control" id="clothePhotoEditar">
+                        </div>
+                    </div>
+                    <!-- Footer de la ventana -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button onclick="editarInfoClothe()" type="button" class="btn btn-success">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="js/funcionesInicioProductos.js"></script>
+</body>
+
+</html>

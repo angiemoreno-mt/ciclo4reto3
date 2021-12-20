@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+    <link rel="stylesheet" href="css/inicio.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Inicio</title>
+</head>
+
+<body>
+    <div id="inicio">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #EFBF1F;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="/img/logoAlto.png" alt="" width="55" height="30" class="d-inline-block align-text-top">
+                    De Alto Turmequé LTDA
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="portalAdmin.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="principal.html">Exit</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid col-md-6">
+            <div id="contenidoUserId" class="table-responsive col-sm-6"></div>
+            <h3>Mi Perfil | Asesor Comercial</h3>
+            <table id="tablaUsuario" class="table table-light table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">IDENTIFICATION</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">EMAIL</th>
+                        <th scope="col">TYPE</th>
+                        <th scope="col">ZONE</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoUsuarioLog">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container-fluid col-md-6">
+            <div id="contenidoUser" class="table-responsive col-sm-6"></div>
+            <h3>Ordenes de pedido</h3>
+            <div class="col-md-15">
+                <table id="pedido" class="table table-light table-bordered"></table>
+                    
+            </div>
+            <div >
+                <button type="button" class="btn btn-primary" id="procesarOrden">
+                    Procesar Orden de Producto
+                </button>
+            </div>
+            <!-- <table id="tablaOrdenes" class="table table-light table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">DATE</th>
+                        <th scope="col">STATUS</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoOrdenes">
+                </tbody>
+            </table> -->
+        </div>
+
+        <div class="row">
+            <div class="col-md-15">
+                <table id="pedido" class="table table-light table-bordered"></table>
+            </div>
+        </div>
+
+        <div class="container-fluid col-md-6">
+            <div id="contenidoUser" class="table-responsive col-sm-6"></div>
+            
+            <table id="tablaProductos" class="table table-light table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">REFERENCIA</th>
+                        <th scope="col">CATEGORIA</th>
+                        <th scope="col">TALLA</th>
+                        <th scope="col">DESCRIPCIÓN</th>
+                        <th scope="col">PRECIO</th>
+                        <th scope="col">CANTIDAD</th>
+                        <th scope="col" colspan="2" style="text-align: center;">ACCIÓN</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoProductos">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="js/funcionesAsesorOrders.js"></script>
+</body>
+
+</html>
